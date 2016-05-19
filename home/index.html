@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"  />
+    <meta content="telephone=no" name="format-detection" />
+    <meta charset="UTF-8">
+    <title>购买页面</title>
+    <link rel="stylesheet" href="../static/css/common_v2.css?v=20160426">
+    <link rel="stylesheet" href="../static/css/swiper.css">
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="../static/js/jquery.js"></script>
+	<script src="../static/js/fastclick.min-1.0.6.js"></script>
+	<script src="../static/js/avalon.js"></script>
+	<script src="../static/js/common_v3.js?v=20160301"></script>
+	<script type="text/jscript" src="index.js?v=20160301"></script>
+ <style>
+ body{
+ 	background: #f2f2f2;
+ }
+  .top_area{
+ 	margin:5px;
+ 	overflow: hidden;
+  }
+  .top_area>div{
+ 	float:left;
+ 	width: 33%;
+ 	text-align: center;
+ 	margin-top:2px;
+  }
+  .top_area>div>img{
+  	width: 95%;
+  }
+  .featured{
+  	width: 48%;
+  	float:left;
+  	margin:1%;
+  }
+  .featured>img{
+  	border-radius: 6px;
+  }
+ </style>
+</head>
+
+<body  ms-controller="root">
+	<div class="device">
+	    <div class="swiper-container">
+	        <div class="swiper-wrapper">
+	           <div class="swiper-slide"  ms-repeat-banner="banners">
+		           <a ms-href="{{banner.bannerUrl}}">
+					    <img ms-src="{{banner.picture}}">
+		           </a>
+	           </div>
+			</div>
+	    </div>
+	    <div class="pagination"></div>
+	</div>
+	<div class="divider"></div>
+	<div style="margin:10px 5px 5px 5px">
+		<div ms-click="gotoPage(item.url)"
+			ms-repeat-item="jingxuans"
+			class="featured">
+			<img ms-src="item.image" />
+		</div>
+	</div>
+	<div style="height: 70px;width: 100%;clear: both;">&nbsp;</div>
+
+	<footer class="footer" id="footer">
+	    <nav>
+	    	<ul>
+	            <li><a href="../home/index.html?v=20160229" class="nav-controller active"><i class="footer_logo footer_home_selected"></i>社区生活</a></li>
+	            <li><a href="../wuye/index.html?v=20160229" class="nav-controller"><i class="footer_logo footer_wuye"></i>社区物业</a></li>
+	            <li><a href="../person/index.html?v=20160229" class="nav-controller"><i class="footer_logo footer_person"></i>个人中心</a></li>
+	        </ul>
+	    </nav>
+	</footer>
+<script>
+function gotoProject(type){
+	location.href="../repair/chooseproject.html?repairType="+type;
+}
+</script>
+<script type="text/javascript" src="../static/js/swiper.js"></script>
+<script type="text/javascript">
+function initSwiper(){
+    //头部展示图适应屏幕
+    window.onload=function(){
+        var a2=parseInt($('.swiper-slide img').css('width') );
+        var a3=a2;
+        $('.swiper-container').css({height:a3 + 'px'});
+        $('.swiper-slide img').css({height:a3 + 'px'});
+		$('.hideloadingpage').hide();
+
+		//顶部图片滑动代码↓
+	    var mySwiper = new Swiper('.swiper-container',{
+	        speed:750,
+	        autoplay:3000,	//
+	        autoplayDisableOnInteraction: false,
+	        autoplayStopOnLast:true,
+	        pagination: '.pagination',
+	        loop:true
+	    })
+    }
+}
+</script>
+</body>
+</html>
