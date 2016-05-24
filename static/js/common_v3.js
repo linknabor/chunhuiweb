@@ -1,23 +1,23 @@
 var MasterConfig = function() {
     var t = {
                 
-        //baseUrl: "http://www.e-shequ.com/chunhui/wechat/hexie/wechat/",
-        //basePageUrl:"http://www.e-shequ.com/chunhui/weixin/",
-        //appId: "wx89c743b2fa762a2c",
+        baseUrl: "http://www.e-shequ.com/chunhui/wechat/hexie/wechat/",
+        basePageUrl:"http://www.e-shequ.com/chunhui/weixin/",
+        appId: "wx89c743b2fa762a2c",
         
         //baseUrl: "http://www.e-shequ.com/wechat-sit/hexie/wechat/",
         //basePageUrl:"http://www.e-shequ.com/wechat-sit/hexie/",
 
-        baseUrl: "http://test.e-shequ.com/chunhui/wechat/hexie/wechat/",
-        basePageUrl:"http://test.e-shequ.com/chunhui/weixin/",
-        appId: "wx95f46f41ca5e570e",
+        //baseUrl: "http://test.e-shequ.com/chunhui/wechat/hexie/wechat/",
+        //basePageUrl:"http://test.e-shequ.com/chunhui/weixin/",
+        //appId: "wx95f46f41ca5e570e",
         
         oauthUrl: "https://open.weixin.qq.com/connect/oauth2/authorize?",
         oauthUrlPostFix:"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect",
-        bindAppId: "wxa48ca61b68163483",
+        bindAppId: "wx173b237e699ace88",
         
         baidu_map_key:"RUWUgrEEF5VjoaWsstMMZwOD",
-        shop_name: "大楼",
+        shop_name: "春晖",
         
         is_debug:true,
         statistics: {
@@ -43,7 +43,7 @@ var Config = function() {
             no_goods: "更多新品正在陆续推出..."
         },
         user_info: {
-            avatar: "http://www.e-shequ.com/weixin/static/images/logo.jpg",
+            avatar: "http://www.e-shequ.com/chunhui/weixin/static/images/logo.jpg",
             nickname: "游客",
             levelname: "普通会员"
         },
@@ -53,7 +53,7 @@ var Config = function() {
             2 : "大楼VIP"
         },
         coupon:{
-            seedImg:"http://www.e-shequ.com/weixin/static/img/banner/banner_market_shuiguo.jpg"
+            seedImg:"http://www.e-shequ.com/chunhui/weixin/static/img/banner/banner_market_shuiguo.jpg"
         }
     },
     e = {};
