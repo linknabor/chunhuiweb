@@ -86,7 +86,13 @@ avalon.ready(function() {
 			        	o.isPaying = false;
 			        	commonui.hideAjaxLoading();
 			        	$("#zzmb").hide();
-          	    }
+          	    },
+          	    cancel:function(res){
+					console.log(JSON.stringify(n));
+					o.isPaying = false;
+			        commonui.hideAjaxLoading();
+			        $("#zzmb").hide();
+				}
           	});
             
 //            o.userPayType = "9"
