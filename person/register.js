@@ -25,7 +25,10 @@ avalon.ready(function() {
         i = {
     			mobile:o.user.tel,
     			name:o.user.name,
-    			yzm:o.captcha
+    			yzm:o.captcha,
+    			xiaoquId:o.xiaoquId,
+    			xiaoquName:o.xiaoquName
+    			
     		},
         e = function(n) {
     		updateUserStatus(n.result);
@@ -80,13 +83,22 @@ avalon.ready(function() {
         $id: "root",
         comeFrom:"",
         isClick: false,
-        
+        page: "main",
+        address:{},
         user:{},
+        xiaoquId:"",
+        xiaoquName:"",
+        
         save:function(){
         	if(!(/^1[3-9][0-9]\d{4,8}$/.test(o.user.tel))) {
         		alert("请填写正确的手机号！");
         		return;
         	}
+        	if(o.user.xiaoquName==''||o.user.xiaoquId==''){
+        		alert("请选择小区！");
+        		return;
+        	}
+        	
         	if(o.captcha=='') {
     			alert('请输入验证码！');
     			return;
@@ -121,12 +133,24 @@ avalon.ready(function() {
 	       		o.yzmstr="获取中";
 	       		yzmreq();
 	       	}
+        },
+        
+        addNewAddr:function(){
+        	
+        	o.page='';
+            chooseAddress(function(address){
+                if(address){
+                    o.address=address;
+                }
+                o.page='main';
+            });
         }
+        
     });
     
     getComeFrom();
     getUserInfo();
-
+    
 	avalon.scan(document.body),
     FastClick.attach(document.body),
     common.setTitle("用户注册");
