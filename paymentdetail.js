@@ -6,10 +6,12 @@ function chooseCoupon(coupon) {
 		o.model.coupon=null;
 		o.model.couponAmout = 0.00;
 		o.model.couponDesc = '未使用';
+		o.model.couponId = "";
 	} else {
 		o.model.coupon = coupon;
 		o.model.couponAmout = coupon.amount;
 		o.model.couponDesc = "￥"+coupon.amount+"元";
+		o.model.couponId = coupon.id;
 	}
 	computeAmount();
 	o.currentPage='main';
@@ -65,7 +67,7 @@ avalon.ready(function() {
     	}
 		o.isPaying = true;
         var n = "POST",
-        a = "getPrePayInfo?billId="+o.billId+"&stmtId="+o.stmtId+"&couponUnit="+o.model.couponAmout+",&couponNum="+o.model.couponNum+",",
+        a = "getPrePayInfo?billId="+o.billId+"&stmtId="+o.stmtId+"&couponUnit="+o.model.couponAmout+",&couponNum=1&couponId="+o.model.couponId,	
         i = null,
         e = function(n) {
             //alert(JSON.stringify(n));
@@ -93,6 +95,7 @@ avalon.ready(function() {
 			        commonui.hideAjaxLoading();
 			        $("#zzmb").hide();
 				}
+          	    
           	});
             
 //            o.userPayType = "9"
@@ -117,15 +120,24 @@ avalon.ready(function() {
 	//更新红包状态
 	function updateCouponStatus(){
 		
+		$("#zzmb").show();
+    	if($(window).height()>$(document).height()){
+    		$(".zzmb").height($(window).height());
+    	}else{
+    		$(".zzmb").height($(document).height());
+    	}
+		
 		var n = "GET",
         a = "updateCouponStatus",
         i = null,
         e = function(n) {
             console.log(JSON.stringify(n));
             queryCoupons();
+            $("#zzmb").hide();
         },
         r = function() {
         	queryCoupons();
+        	$("#zzmb").hide();
         };
         common.invokeApi(n, a, i, null, e, r)
 		
@@ -236,7 +248,8 @@ avalon.ready(function() {
         	couponNum:0,
         	coupon:null,
         	couponDesc:'未使用',
-        	couponAmount: 0
+        	couponAmount: 0,
+        	couponId:""
         },
         
         pay: function() {

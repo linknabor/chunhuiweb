@@ -1,18 +1,4 @@
-    function getUnreadComments(){
-         common.invokeApi("POST", "getUnreadComments", null, null, function(n) {
-            console.log(JSON.stringify(n));
-            if(n.result&&n.result>0){
-                if($("#mypublic").length>0){
-                    mypublic.html("<img style=\"height: 8px; width: 8px; margin-bottom:1px; \" src=\"../static/images/person/icon_redpoint.png\">&nbsp;&nbsp;");
-                }
-            }else{
-                if($("#mypublic").length>0){
-                    $("#mypublic").html("&nbsp;&nbsp;");
-                }
-            }
-         });
-    }
-    avalon.ready(function() {
+avalon.ready(function() {
     function n() {
         var n = "GET",
         a = "userInfo",
@@ -71,9 +57,25 @@
         	location.href=MasterConfig.C('basePageUrl')+"person/coupons.html";
         }
     });
+    
+    //更新红包状态
+	function updateCouponStatus(){
+		
+		var n = "GET",
+        a = "updateCouponStatus",
+        i = null,
+        e = function(n) {
+            console.log(JSON.stringify(n));
+        },
+        r = function() {
+
+        };
+        common.invokeApi(n, a, i, null, e, r)
+		
+	}
 
     n();
-    getUnreadComments()
+    updateCouponStatus();
     avalon.scan(document.body);
     initWechat(['onMenuShareTimeline','onMenuShareAppMessage']);
     initShareConfig("我的社区，我的家，我在春晖！",MasterConfig.C("basePageUrl")+"person/index.html?v=20160301",MasterConfig.C("basePageUrl")+"/static/images/share_logo4.png","春晖，我的生活管家");
