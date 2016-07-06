@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+ 
+ </style>
+ 	<script src="../static/js/jquery.js"></script>
+    <script type="text/jscript" src="../static/js/zepto.min.js"></script>
+	<script type="text/jscript" src="../static/js/fastclick.min-1.0.6.js"></script>
+	<script type="text/jscript" src="../static/js/avalon.js"></script>
+	<script type="text/jscript" src="../static/js/common_v3.js"></script>
+	
+	
+	<script>
+	avalon.ready(function() {
+		function init(){
+			
+			var n = "get",
+	        a = "initSession4Test/10/",
+	        i = {
+			},
+	        e = function(n) {
+				console.log(JSON.stringify(n));
+				alert(n.result);
+				
+	        },
+	        r = function() {
+	        	//alert("º”‘ÿœ˚œ¢ ß∞‹£°");
+	        };
+	        common.invokeApi(n, a, i, null, e, r)
+		}
+		init();
+		
+	})
+	</script>
+	
+	
+ </head>
+ <form>
+ 
+ welcome !
+ </form>
+ </html>
