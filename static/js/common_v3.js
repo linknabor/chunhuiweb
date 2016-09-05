@@ -10,6 +10,9 @@ var MasterConfig = function() {
 
         baseUrl: "http://test.e-shequ.com/chunhui/wechat/hexie/wechat/",
         basePageUrl:"http://test.e-shequ.com/chunhui/weixin/",
+        payPageFolder:"http://test.e-shequ.com/pay/",
+        payPageSuffix:"ch",		//chunhui
+        
         appId: "wx95f46f41ca5e570e",
         
         oauthUrl: "https://open.weixin.qq.com/connect/oauth2/authorize?",
@@ -17,7 +20,7 @@ var MasterConfig = function() {
         bindAppId: "wxa48ca61b68163483",
         
         baidu_map_key:"RUWUgrEEF5VjoaWsstMMZwOD",
-        shop_name: "大楼",
+        shop_name: "春晖",
         
         is_debug:true,
         statistics: {
