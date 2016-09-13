@@ -16,11 +16,14 @@ var MasterConfig = function() {
         oauthUrl: "https://open.weixin.qq.com/connect/oauth2/authorize?",
         oauthUrlPostFix:"&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect",
         bindAppId: "wx173b237e699ace88",
+
+		payPageFolder:"http://www.e-shequ.com/pay/",
+        payPageSuffix:"ch",		//chunhui
         
         baidu_map_key:"RUWUgrEEF5VjoaWsstMMZwOD",
         shop_name: "春晖",
         
-        is_debug:true,
+        is_debug:false,
         statistics: {
             baidu_code: "23a1ae591bf2274b3024408e7e3a1fac",
             cnzz_script: '<script src="http://s11.cnzz.com/stat.php?id=1256090623&web_id=1256090623" language="JavaScript"></script>'
