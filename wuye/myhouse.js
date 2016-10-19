@@ -56,7 +56,7 @@ avalon.ready(function() {
 
         },
         r = function(n) {
-			alert("添加房子异常，请稍后重试！");
+			alert(n.message);
         };
         common.invokeApi(n, a, i, null, e, r)
 	}
