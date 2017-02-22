@@ -133,7 +133,7 @@ avalon.ready(function() {
 	        	    o.stmtId = rs; // 当needResult 为 1 时，扫码返回的结果
 	        	},
 	        	fail: function (res) {
-	        		alert("网络不稳定,请刷新重试验！");
+	        		alert("网络不稳定，请刷新重试！");
 	        	}
         	});
         },
@@ -379,6 +379,7 @@ avalon.ready(function() {
         };
         common.invokeApi(n, a, i, null, e, r)
     }
+    
     
     initWechat(['scanQRCode']);
     checkUserRegister();
