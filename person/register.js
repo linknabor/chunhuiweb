@@ -86,8 +86,8 @@ avalon.ready(function() {
         page: "main",
         address:{},
         user:{},
-        xiaoquId:"",
-        xiaoquName:"",
+        xiaoquId: 0,
+        xiaoquName: ' ',
         
         save:function(){
         	if(!(/^1[3-9][0-9]\d{4,8}$/.test(o.user.tel))) {
