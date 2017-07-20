@@ -53,7 +53,7 @@ avalon.ready(function() {
 				var i = {orderId:repairOrderId,amount:o.amount.trim()};
 				common.invokeApi("POST", "repair/payOffline", i, null, function(t){
 					alert("维修单已确认！");
-			    	location.href="repair/comment.html?oId="+repairOrderId;
+			    	location.href=MasterConfig.C("basePageUrl")+"repair/comment.html?oId="+repairOrderId;
 				},  function(t){
 					alert("信息提交异常，请稍后重试！");
 				});

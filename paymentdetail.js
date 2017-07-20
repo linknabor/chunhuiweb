@@ -67,22 +67,22 @@ avalon.ready(function() {
     	}
 		o.isPaying = true;
         var n = "POST",
-        a = "getPrePayInfo?billId="+o.billId+"&stmtId="+o.stmtId+"&couponUnit="+o.model.couponAmout+",&couponNum=1&couponId="+o.model.couponId,	
+        a = "getPrePayInfo?billId="+o.billId+"&stmtId="+o.stmtId+"&couponUnit="+o.model.couponAmout+",&couponNum=1&couponId="+o.model.couponId+"&mianBill="+o.mianBill+"&mianAmt="+o.mianAmt,
         i = null,
         e = function(n) {
             //alert(JSON.stringify(n));
         	o.userPayType = n.result.user_pay_type;
         	o.tradeWaterId = n.result.trade_water_id;
         	o.packageId = n.result.packageId;
-        	
-        	wx.config({
+
+			wx.config({
     		    appId: n.result.appid, // 必填，公众号的唯一标识
     		    timestamp: n.result.timestamp , // 必填，生成签名的时间戳
     		    nonceStr: n.result.noncestr, // 必填，生成签名的随机串
     		    signature: n.result.paysign,// 必填，签名，见附录1
     		    jsApiList: ['chooseWXPay'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
     		});
-        	
+
             wx.chooseWXPay({
                 "timestamp":n.result.timestamp,
                 "nonceStr":n.result.noncestr,
@@ -160,6 +160,13 @@ avalon.ready(function() {
             console.log(JSON.stringify(n));
             o.payInfo=n.result;
             o.payInfofee_data=n.result.fee_data;
+            o.mianBill = n.result.mianBill;
+            o.mianAmt = n.result.mianAmt;
+			if(!o.mianAmt){
+				o.mianAmt = 0;
+			}
+            o.totalPrice = parseFloat(o.totalPrice)-parseFloat(o.mianAmt);
+            o.totalPrice = o.totalPrice.toFixed(2);
         },
         r = function() {
             alert("获取支付信息失败，请稍后再试！");
@@ -252,6 +259,8 @@ avalon.ready(function() {
         tradeWaterId:'',
         packageId:'',
         factPrice:0.00,
+        mianBill:'',
+        mianAmt:0.00,
         
         model:{
         	couponNum:0,
@@ -288,7 +297,7 @@ avalon.ready(function() {
     });
     //n();
     getBillId();
-//    initWechat(['chooseWXPay']) ;
+    //initWechat(['chooseWXPay']) ;
     getDetailInfo();
     updateCouponStatus();
     avalon.scan(document.body);

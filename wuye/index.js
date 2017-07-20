@@ -54,7 +54,6 @@ avalon.ready(function() {
        jumpToDetail:function(mid) {
 
 
-
     	   if(mid==1){
     		   window.location.href="http://mp.weixin.qq.com/s?__biz=MzIyMjI2NDkzMg==&mid=100000001&idx=6&sn=f1d2aa14684b2041095ddcc3c757927a&scene=0&previewkey=koIZjFK%2FvSTLuEWTZbl26MwqSljwj2bfCUaCyDofEow%3D#wechat_redirect";
     	   }else if(mid==2){
@@ -67,6 +66,10 @@ avalon.ready(function() {
 			   window.location.href="http://mp.weixin.qq.com/s?__biz=MzIyMjI2NDkzMg==&mid=100000001&idx=2&sn=8948b2a3c709b3dc8da5b2d3117716aa&scene=0&previewkey=koIZjFK%2FvSTLuEWTZbl26MwqSljwj2bfCUaCyDofEow%3D#wechat_redirect";
 		   }else if(mid==6){
 			   window.location.href="http://mp.weixin.qq.com/s?__biz=MzIyMjI2NDkzMg==&mid=100000001&idx=1&sn=ef563f8358b55f4a379f81833d323fbb&scene=0&previewkey=koIZjFK%2FvSTLuEWTZbl26MwqSljwj2bfCUaCyDofEow%3D#wechat_redirect";
+		   }else if(mid==7){
+			   window.location.href="http://mp.weixin.qq.com/s?__biz=MzIyMjI2NDkzMg==&mid=100000013&idx=1&sn=6944e371c60d785a9e9e07dd4e84d148&scene=0&previewkey=PkhvZKQnybYaFnX0%2FOYzAcNS9bJajjJKzz%2F0By7ITJA%3D";
+		   }else if(mid==8){
+			   window.location.href="http://mp.weixin.qq.com/s?__biz=MzIyMjI2NDkzMg==&mid=100000020&idx=1&sn=bc61c4c8f230e81cda7a8d4730bcedf5&scene=1&srcid=05243PW8WJNVBwGX428iX7T9#rd";
 		   }else{
     		   window.location.href="message.html?messageId="+mid;
     	   }
