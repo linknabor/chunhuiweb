@@ -3,7 +3,7 @@ var MasterConfig = function() {
                 
         baseUrl: "https://www.e-shequ.com/chunhui/wechat/hexie/wechat/",
         basePageUrl:"https://www.e-shequ.com/chunhui/weixin/",
-        appId: "wx89c743b2fa762a2c",
+        appId: "wxbd214f5765f346c1",
         
         //baseUrl: "https://www.e-shequ.com/wechat-sit/hexie/wechat/",
         //basePageUrl:"https://www.e-shequ.com/wechat-sit/hexie/",
