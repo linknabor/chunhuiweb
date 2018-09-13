@@ -183,7 +183,7 @@
 
     </div>
     <div class="info-wrap" style="border-bottom: none;">
-		<a ms-href="tel:{{user.officeTel}} " ms-visible="user.officeTel!==null"  class="input-wrap menu-person-link lite-divider special-link">
+		<a ms-href="tel:{{user.officeTel}} " ms-visible="user.officeTel!==null && user.officeTel!==''"  class="input-wrap menu-person-link lite-divider special-link">
             <span class="input-info lf30 fs16">小区电话</span>
             <span class="fr fs14 left_color">{{user.officeTel}}</span>
         </a>
