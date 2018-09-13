@@ -9,6 +9,7 @@ avalon.ready(function() {
             o.user.headimgurl = "" != n.result.name ? n.result.headimgurl: Config.C("user_info").avatar;
             o.user.name = "" != n.result.name ? n.result.name: Config.C("user_info").nickname;
             o.user.level = Config.C("user_level")[n.result.level];
+			o.user.officeTel = n.result.officeTel;
         },
         r = function() {
 			console.log(JSON.stringify(n));
@@ -28,7 +29,8 @@ avalon.ready(function() {
         	level:"",
         	zhima:"0",
         	lvdou:"0",
-        	couponCount:0
+        	couponCount:0,
+			officeTel:0
         },
 
 		//fix me
